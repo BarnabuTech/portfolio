@@ -1,0 +1,19 @@
+# Envirable files
+backend\env\
+backend/env/
+env/
+
+# Python files
+*.py[cod]
+__pycache__/
+*.pyo
+*.pyd
+*.pyc
+*.pdb
+*.egg-info/
+*.egg
+*.whl
+*.manifest
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
