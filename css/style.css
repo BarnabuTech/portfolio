@@ -1897,3 +1897,18 @@
   transform: translateY(1px);
   box-shadow: 0px 3px 10px rgba(255, 140, 0, 0.4);
 }
+
+/* --- Custom Mobile Enhancements for Full Responsiveness --- */
+@media (max-width: 580px) {
+  .sidebar {
+    max-height: none !important;
+    overflow: visible !important;
+  }
+  .sidebar-info_more {
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+  .info_more-btn {
+    display: none !important;
+  }
+}
