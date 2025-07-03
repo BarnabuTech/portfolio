@@ -1,7 +1,10 @@
 # Envirable files
 backend\env\
 backend/env/
+backend\.env
+backend/.env
 env/
+.env
 
 # Python files
 *.py[cod]
