@@ -203,7 +203,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
       // Send data to Django backend
       try {
-          const response = await fetch("http://127.0.0.1:8000/contact/submit/", {
+          const response = await fetch("https://YOUR-RENDER-BACKEND-URL.onrender.com/contact/submit/", {
               method: "POST",
               headers: { "Content-Type": "application/json" },
               body: JSON.stringify(formData),
