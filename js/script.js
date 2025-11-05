@@ -82,39 +82,81 @@ for (let i = 0; i < selectItems.length; i++) {
 const filterItems = document.querySelectorAll("[data-filter-item]");
 
 const filterFunc = function (selectedValue) {
-
+  // Convert the selected value to lowercase and replace spaces with hyphens to match data-category format
+  const formattedValue = selectedValue.toLowerCase().replace(/\s+/g, '-');
+  
   for (let i = 0; i < filterItems.length; i++) {
-
-    if (selectedValue === "all") {
-      filterItems[i].classList.add("active");
-    } else if (selectedValue === filterItems[i].dataset.category) {
-      filterItems[i].classList.add("active");
+    const item = filterItems[i];
+    const itemCategory = item.getAttribute('data-category').toLowerCase().replace(/\s+/g, '-');
+    
+    if (formattedValue === 'all' || itemCategory.includes(formattedValue)) {
+      item.classList.add("active");
     } else {
-      filterItems[i].classList.remove("active");
+      item.classList.remove("active");
     }
-
   }
 
+  // Update URL hash for deep linking
+  window.location.hash = selectedValue === 'all' ? '#' : `#${formattedValue}`;
 }
 
 // add event in all filter button items for large screen
 let lastClickedBtn = filterBtn[0];
 
+// Function to set active state on filter buttons
+const setActiveFilterButton = (value) => {
+  for (let i = 0; i < filterBtn.length; i++) {
+    const btn = filterBtn[i];
+    const btnValue = btn.innerText.toLowerCase();
+    
+    if (value === 'all' && btnValue === 'all') {
+      btn.classList.add('active');
+      lastClickedBtn = btn;
+    } else if (btnValue === value.toLowerCase()) {
+      btn.classList.add('active');
+      lastClickedBtn = btn;
+    } else {
+      btn.classList.remove('active');
+    }
+  }
+};
+
+// Initialize with 'All' filter active
+setActiveFilterButton('all');
+
+// Add click events to filter buttons
 for (let i = 0; i < filterBtn.length; i++) {
-
   filterBtn[i].addEventListener("click", function () {
-
-    let selectedValue = this.innerText.toLowerCase();
+    const selectedValue = this.innerText.toLowerCase();
     selectValue.innerText = this.innerText;
     filterFunc(selectedValue);
-
-    lastClickedBtn.classList.remove("active");
-    this.classList.add("active");
-    lastClickedBtn = this;
-
+    setActiveFilterButton(selectedValue);
   });
-
 }
+
+// Handle initial load with hash in URL
+const handleInitialFilter = () => {
+  const hash = window.location.hash.substring(1);
+  if (hash) {
+    const formattedHash = hash.replace(/-/g, ' ');
+    const matchingBtn = Array.from(filterBtn).find(
+      btn => btn.innerText.toLowerCase() === formattedHash
+    );
+    
+    if (matchingBtn) {
+      matchingBtn.click();
+    }
+  } else {
+    // Default to 'All' filter
+    filterFunc('all');
+  }
+};
+
+// Run on initial load
+window.addEventListener('load', handleInitialFilter);
+
+// Also run when hash changes
+window.addEventListener('hashchange', handleInitialFilter);
 
 
 
