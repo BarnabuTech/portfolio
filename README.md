@@ -25,19 +25,23 @@ In this section, I have included details topics:
 
 #### 1. About Section:
 
-![image](https://github.com/user-attachments/assets/30ddf7db-78c7-4408-8c1a-5e21b93b2d63)
+<img width="1236" height="939" alt="image" src="https://github.com/user-attachments/assets/ba2822e2-02f9-4bee-91b1-37dca3196e82" />
+
 
 #### 2. Resume Section:
 
-![image](https://github.com/user-attachments/assets/9e9e30cd-9001-42cd-b784-197c80538713)
+<img width="1236" height="939" alt="image" src="https://github.com/user-attachments/assets/142e463a-4edb-4b55-9847-c72dff06c017" />
+
 
 #### 3. Projects Section:
 
-![image](https://github.com/user-attachments/assets/05e66a7f-8974-4c72-941e-abddf4087c59)
+<img width="1236" height="939" alt="image" src="https://github.com/user-attachments/assets/e70556b8-abee-4a67-a8ed-0c0141b9812f" />
+
 
 #### 4. Blog Section:
 
-![image](https://github.com/user-attachments/assets/cb07ac92-cf9e-49a2-89ec-343c9e201e01)
+<img width="1236" height="939" alt="image" src="https://github.com/user-attachments/assets/1f211d04-1ca0-4e3c-8377-91841f1bf229" />
+
 
 #### 5. Contact Section:
 
